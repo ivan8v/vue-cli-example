@@ -1,31 +1,27 @@
 <template>
-    <div>
-        <el-card>
-            <div slot="header" class="clearfix">
-                <el-row>
-                    <h3>Listado de Items</h3>
-                </el-row>
-                <el-row>
-                    <span>Click en item para ver detalle</span>
-                </el-row>
-            </div>
-            <ListFilters></ListFilters>
-            <transition-group name="fade-list">
-                <ListItem :key="item.id" v-for="item in items" :item="item"></ListItem>
-            </transition-group>
-        </el-card>
-        <ItemDetailDialog :visible="dialogVisible"></ItemDetailDialog>
-    </div>
+    <el-card>
+        <div slot="header" class="clearfix">
+            <el-row>
+                <h3>Listado de Items</h3>
+            </el-row>
+            <el-row>
+                <h4>Click en item para ver detalle</h4>
+            </el-row>
+        </div>
+        <ListFilters></ListFilters>
+        <transition-group name="fade-list">
+            <ListItem :key="item.id" v-for="item in items" :item="item"></ListItem>
+        </transition-group>
+    </el-card>
 </template>
 
 <script>
     import ListItem from "@/components/ListItem";
     import ListFilters from "@/components/ListFilters";
-    import ItemDetailDialog from "@/components/ItemDetailDialog";
 
     export default {
         name: "ListIndex",
-        components: {ItemDetailDialog, ListFilters, ListItem},
+        components: {ListFilters, ListItem},
         mounted() {
             this.fetchItems();
         },

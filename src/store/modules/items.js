@@ -1,7 +1,6 @@
 const defaultState = {
     items: [],
     filterItemsWord: '',
-    detailDialogVisible: false,
     selectedItem: {}
 };
 const actions = {
@@ -24,19 +23,17 @@ const actions = {
 const mutations =  {
     UPDATE_ITEMS_FILTER: (state, payload) => state.filterItemsWord = payload,
     SET_ITEMS: (state, payload) => state.items = payload,
-    TOGGLE_DIALOG: (state, payload) => {
-        state.detailDialogVisible = payload.visibility;
+    SET_DETAIL_ITEM: (state, payload) => {
         state.selectedItem = payload.item;
     }
 };
 const getters = {
     filteredItems: state => state.items.filter(item => item.title.toLowerCase().includes(state.filterItemsWord.toLowerCase())),
-    dialogVisibility: state => state.detailDialogVisible,
     selectedItem: state => state.selectedItem
 };
 export default {
     state: defaultState,
     getters,
     actions,
-    mutations,
+    mutations
 };

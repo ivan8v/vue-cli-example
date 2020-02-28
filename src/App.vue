@@ -2,20 +2,16 @@
     <div id="app">
         <el-row>
             <el-col :span="10" :offset="7">
-                <ListIndex/>
+                    <router-view></router-view>
             </el-col>
         </el-row>
     </div>
 </template>
 
 <script>
-    import ListIndex from "@/components/ListIndex";
 
     export default {
-        name: 'App',
-        components: {
-            ListIndex
-        }
+        name: 'App'
     }
 </script>
 
@@ -27,5 +23,9 @@
         text-align: center;
         color: #2c3e50;
         margin-top: 60px;
+    }
+    .pink-button {
+        background: #ff009a !important;
+        color: white !important;
     }
 </style>

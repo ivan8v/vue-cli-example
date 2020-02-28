@@ -24,10 +24,10 @@
         methods: {
             showDetail() {
                 let payload = {
-                    visibility: true,
                     item: this.item
                 };
-                this.$store.commit('TOGGLE_DIALOG', payload);
+                this.$store.commit('SET_DETAIL_ITEM', payload);
+                this.$router.push('/detail')
             }
         },
     }

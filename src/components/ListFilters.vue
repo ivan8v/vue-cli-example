@@ -7,7 +7,7 @@
             <el-input @keyup.enter.native="filterItems" @focus="clearRealTimeFilter" placeholder="Filtro" v-model="searchWord"></el-input>
         </el-col>
         <el-col :span="6">
-            <el-button @click="filterItems" :disabled="searchWord === ''" type="primary">Buscar</el-button>
+            <el-button class="pink-button" @click="filterItems" :disabled="searchWord === ''">Buscar</el-button>
         </el-col>
     </el-row>
 </template>
